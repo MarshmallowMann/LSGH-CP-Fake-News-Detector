@@ -1,3 +1,4 @@
+#template modified from https://towardsdatascience.com/how-to-easily-deploy-machine-learning-models-using-flask-b95af8fe34d4
 from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
