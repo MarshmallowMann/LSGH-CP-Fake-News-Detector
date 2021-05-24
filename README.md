@@ -16,7 +16,7 @@ The pretrained model repository of the Filipino Fake New Detector under the stud
 2. Insantiate the pretrained vectorizer and model using: <br>
 `classifier = pickle.load(open('App/model.pkl', 'rb'))` <br>
 `vectorizer = pickle.load(open('App/vectorizer.pkl', 'rb'))`
-3. Vectorize the dataset using the `vectorizer.transform(df) function`
+3. Vectorize the dataset using the `vectorizer.transform(df)` function
 4. Perform a train_test split using the sklearn train_test_split function. <br>
 `X_train, X_test, y_train, y_test = train_test_split(all_features, data.label, test_size=0.3, random_state = 88)`
 5. Check Accuracy using: `print(f"Accuracy: {classifier.score(X_test, y_test):.2%}")`
