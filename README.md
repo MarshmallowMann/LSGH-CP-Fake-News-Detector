@@ -13,7 +13,7 @@ The pretrained model repository of the Filipino Fake New Detector under the stud
 
 ## Replicate Results
 1. Import the [Tagalog Fake News Dataset](https://github.com/jcblaisecruz02/Tagalog-fake-news) by Cruz et al.(2020) as a Pandas dataframe.
-2. Insantiate the pretrained vectorizer and model using: <br>
+2. Instantiate the pretrained vectorizer and model using: <br>
 `classifier = pickle.load(open('App/model.pkl', 'rb'))` <br>
 `vectorizer = pickle.load(open('App/vectorizer.pkl', 'rb'))`
 3. Vectorize the dataset using the `vectorizer.transform(df)` function.
