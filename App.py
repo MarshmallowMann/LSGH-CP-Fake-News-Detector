@@ -34,7 +34,6 @@ def predict():
         probability = model.predict_proba(tra_articles)
         if not prediction:
             output = "Real News"
-
         else:
             output = "Fake News"
 
