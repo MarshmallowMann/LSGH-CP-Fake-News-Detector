@@ -5,7 +5,6 @@ import pickle
 import numpy as np
 import os
 
-
 app = Flask(__name__)
 recaptcha = ReCaptcha(app=app)
 model = pickle.load(open('model.pkl', 'rb'))
@@ -19,6 +18,7 @@ app.config.update(dict(
 
 recaptcha = ReCaptcha()
 recaptcha.init_app(app)
+
 
 @app.route('/')
 def home():
@@ -38,8 +38,11 @@ def predict():
             output = "Fake News"
 
         return render_template('index.html', prediction_text='This article was predicted to be probably {} based on '
-                                                             'the word choice and writing style.'.format(output, probability[0][0],
-                                                                               probability[0][1]))
+                                                             'the word choice and writing style.'.format(output,
+                                                                                                         probability[0][
+                                                                                                             0],
+                                                                                                         probability[0][
+                                                                                                             1]))
     else:
         return render_template('index.html', prediction_text='Recaptcha Failed.')
 
@@ -51,3 +54,7 @@ def results():
 
     output = prediction[0]
     return jsonify(output)
+
+
+if __name__ == '__main__':
+    app.run()
